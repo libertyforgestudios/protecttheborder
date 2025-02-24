@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Protect the Border</title>
+    <!-- Load Phaser externally -->
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+    <script type="module" crossorigin src="/assets/index-B2y_cQAi.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BnlUvUDs.css">
+  </head>
+  <body>
+    <div id="orientationOverlay" class="gameUI">
+      <img src="/assets/rotate_icon.png" alt="Rotate Device" id="rotateIcon" />
+      <br /><br />
+      <p><b>Turn device horizontal to resume</b></p>
+      <br />
+      <p>If that doesn't work, you need to enable rotation on your device settings</p>
+    </div>
+    <main>
+      <canvas id="gameCanvas"></canvas>
+      <div id="mobileIntroDiv" class="gameUI">
+        <p>This game is best experienced in full screen mode.</p>
+        <p>Tap the button to enter full screen mode.</p>
+        <button id="goFullScreenBtn"><p>Go Full Screen</p></button>
+      </div>
+      <div id="gameStartDiv" class="gameUI">
+        <div id="overlayText">
+          <p>Catch as many illegals as you can!</p>
+          <p>And be careful, some of them are really dangerous.</p>
+          <p><br /></p>
+          <button id="gameStartBtn"><p>Start</p></button>
+        </div>
+        <p id="disclaimer">Images generated with xAI and DALL-E, code generated with ChatGPT.</p>
+        <div class="overlay3"></div>
+      </div>
+      <div id="gameEndDiv" class="gameUI">
+        <h1><span id="gameWinLoseSpan"></span></h1>
+        <h2>Score Summary</h2>
+        <p>Workers Captured: <span id="workerScore">0</span></p>
+        <p>Terrorists Captured: <span id="terroristScore">0</span></p>
+        <p>Traffickers Captured: <span id="traffickerScore">0</span></p>
+        <p>Victims Rescued: <span id="victimScore">0</span></p>
+        <h1>Final Score: <span id="gameEndScoreSpan"></span></h1>
+        <p>Refresh to play again</p>
+      </div>
+    </main>
+  </body>
+</html>
