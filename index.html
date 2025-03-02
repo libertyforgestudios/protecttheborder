@@ -1,68 +1,93 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta property="og:title" content="🔥 Challenge Accepted! Can You Beat My Score?" />
-    <meta property="og:description" content="I just dominated this game! Can you beat my high score? Play now and prove you're the best! 🏆🎮" />
-    <meta property="og:image" content="https://protecttheborder.libertyforgestudios.com/assets/ProtectTheBorder.png" />
-    <meta property="og:url" content="https://protecttheborder.libertyforgestudios.com" />
-    <meta property="og:type" content="website" />
-    
-    <!-- Twitter Card (optional for better cross-platform sharing) -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="🔥 Challenge Accepted! Can You Beat My Score?" />
-    <meta name="twitter:description" content="I just dominated this game! Can you beat my high score? Play now and prove you're the best! 🏆🎮" />
-    <meta name="twitter:image" content="https://protecttheborder.libertyforgestudios.com/assets/ProtectTheBorder.png" />
 
-    <meta charset="UTF-8" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
-    <link rel="manifest" href="/assets/site.webmanifest" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Protect the Border</title>
-    <!-- Load Phaser externally -->
-    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
-    <script type="module" crossorigin src="/assets/index-BgcoPOZE.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CBnydLM4.css">
-  </head>
-  <body>
-    <div id="orientationOverlay" class="gameUI">
-      <img src="/assets/rotate_icon.png" alt="Rotate Device" id="rotateIcon" />
-      <br /><br />
-      <p><b>Turn device horizontal to resume</b></p>
-      <br />
-      <p>If that doesn't work, you need to enable rotation on your device settings</p>
+<head>
+  <meta property="og:title" content="🔥 Challenge Accepted! Can You Beat My Score?" />
+  <meta property="og:description"
+    content="I just dominated this game! Can you beat my high score? Play now and prove you're the best! 🏆🎮" />
+  <meta property="og:image" content="https://protecttheborder.libertyforgestudios.com/assets/ProtectTheBorder.png" />
+  <meta property="og:url" content="https://protecttheborder.libertyforgestudios.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card (optional for better cross-platform sharing) -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="🔥 Challenge Accepted! Can You Beat My Score?" />
+  <meta name="twitter:description"
+    content="I just dominated this game! Can you beat my high score? Play now and prove you're the best! 🏆🎮" />
+  <meta name="twitter:image" content="https://protecttheborder.libertyforgestudios.com/assets/ProtectTheBorder.png" />
+
+  <meta charset="UTF-8" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+  <link rel="manifest" href="/assets/site.webmanifest" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Protect the Border</title>
+  <!-- Load Phaser externally -->
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+
+  <!-- Twitter conversion tracking base code -->
+  <script>
+    !function (e, t, n, s, u, a) {
+      e.twq || (s = e.twq = function () {
+        s.exe ? s.exe.apply(s, arguments) : s.queue.push(arguments);
+      }, s.version = '1.1', s.queue = [], u = t.createElement(n), u.async = !0, u.src = 'https://static.ads-twitter.com/uwt.js',
+        a = t.getElementsByTagName(n)[0], a.parentNode.insertBefore(u, a))
+    }(window, document, 'script');
+    twq('config', 'p7fjq');
+  </script>
+  <!-- End Twitter conversion tracking base code -->
+  <script type="module" crossorigin src="/assets/index-uPYhz1Cx.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BhPwu1nH.css">
+</head>
+
+<body>
+  <div id="orientationOverlay" class="gameUI">
+    <img src="/assets/rotate_icon.png" alt="Rotate Device" id="rotateIcon" />
+    <br /><br />
+    <p><b>Turn device horizontal to resume</b></p>
+    <br />
+    <p>If that doesn't work, you need to enable rotation on your device settings</p>
+  </div>
+  <main>
+    <div id="tapOverlay" class="gameUI">
+      <div class="tapInstruction left"></div>
+      <div class="tapInstruction right"></div>
     </div>
-    <main>
-      <div id="tapOverlay" class="gameUI">
-        <div class="tapInstruction left"></div>
-        <div class="tapInstruction right"></div>
-      </div>
-      <div id="keyboardOverlay" class="gameUI">
-        <div class="keyboardInstruction"></div>
-      </div>  
-      <button id="muteButton">🔊</button>
-      <button id="shareScoreBtn" class="button fire-button"><p>🔥 Brag About Your Score!</p></button>
+    <div id="keyboardOverlay" class="gameUI">
+      <div class="keyboardInstruction"></div>
     </div>
-      <canvas id="gameCanvas"></canvas>
-      <div id="mobileIntroDiv" class="gameUI" style="color: black;">
-        <p>This game is best experienced in full screen mode.</p>
-        <p>Tap the button to enter full screen mode.</p>
-        <br>
-        <button id="goFullScreenBtn"><p>Go Full Screen</p></button>
-        <br>
-        <button id="dismissFullScreenBtn"><p>Dismiss</p></button>
+    <button id="muteButton">🔊</button>
+    <button id="shareScoreBtn" class="button fire-button">
+      <p>🔥 Brag About Your Score!</p>
+    </button>
+    </div>
+    <canvas id="gameCanvas"></canvas>
+    <div id="mobileIntroDiv" class="gameUI" style="color: black;">
+      <p>This game is best experienced in full screen mode.</p>
+      <p>Tap the button to enter full screen mode.</p>
+      <br>
+      <button id="goFullScreenBtn">
+        <p>Go Full Screen</p>
+      </button>
+      <br>
+      <button id="dismissFullScreenBtn">
+        <p>Dismiss</p>
+      </button>
+    </div>
+    <div id="gameStartDiv" class="gameUI">
+      <div id="overlayText">
+        <p>Catch as many illegals as you can!</p>
+        <p>And be careful, some of them are really dangerous.</p>
+        <p><br /></p>
+        <button id="gameStartBtn" class="button">
+          <p>Start</p>
+        </button>
       </div>
-      <div id="gameStartDiv" class="gameUI">
-        <div id="overlayText">
-          <p>Catch as many illegals as you can!</p>
-          <p>And be careful, some of them are really dangerous.</p>
-          <p><br /></p>
-          <button id="gameStartBtn" class="button"><p>Start</p></button>
-        </div>
-        <p id="disclaimer">Images generated with xAI and DALL-E, code generated with ChatGPT.</p>
-        <div class="overlay3"></div>
-      </div>
-    </main>
-  </body>
+      <p id="disclaimer">Images generated with xAI and DALL-E, code generated with ChatGPT.</p>
+      <div class="overlay3"></div>
+    </div>
+  </main>
+</body>
+
 </html>
